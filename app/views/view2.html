@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="item col-md-6">
+        <h1>View2</h1>
+    </div>
+    <div class="item col-md-6">
+         <form name="userForm">
+          <ul ng-repeat="person in people">
+            <li>{{person.name}}</li>
+            <li>{{person.lastName}}</li>
+            <label>Name:
+              <input my-directive = 'name' type="text" name="userName" ng-model="person.name"/>
+            </label>
+            <label>Last Name: 
+              <input my-directive = 'lastname' type="text" name="userLastName" ng-model="person.lastName"/>
+            </label>
+          </ul>
+       </form>
+       <button ng-click="save()">
+          {{saveText}}
+       </button>
+       </div>  
+    </div>

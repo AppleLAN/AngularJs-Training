@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html ng-app = "Angular_Practice">
+	<head>
+		<title>My angular First App</title>
+    	<link href="http://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+	</head>
+        <header>
+            <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">My Angular First App</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/"> view1</a></li>
+                    <li><a href="#/view2"> view2</a></li>
+                </ul>
+            </div>
+            </nav>
+        </header>
+
+		<div id="main">
+          <div ng-view></div>
+    	</div>
+    	<script src="js/angular.min.js"></script>
+    	<script src="js/angular-route.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="js/jquery-ui.min.css">
+
+    	<script src="app/app.js"></script>
+
+    	<script src="app/controllers/view1Controller.js"></script>
+    	<script src="app/controllers/view2Controller.js"></script>
+
+        <script src="app/directives/my-directive.js"></script>
+
+        
+        <script src="app/services/dataService.js"></script>
+
+	</body>
+</html>

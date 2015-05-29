@@ -19,6 +19,5 @@ app.factory('peopleService', function($http) {
    			url: 'api/data.json'
    		});
    };
-  
    return service;
 });

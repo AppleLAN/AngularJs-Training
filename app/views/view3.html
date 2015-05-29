@@ -4,6 +4,29 @@
         <h1>View3</h1>
     </div>
     <div class="item col-md-6">
-     
-   </div>  
-    </div>
+    <label>{{messagePersona}} <input type="checkbox" ng-model="checked1" ng-init="checked=false" /></label>
+    <label>{{messagePerro}} <input type="checkbox" ng-model="checked2" ng-init="checked=false" /></label>
+	<form ng-if="checked1" name = "formularioPersona" role = "form" class="animate-if" ng-model = "formularioPersona">
+       <label>Name:
+         <input type="text" name="userName"/>
+       </label>
+       <label>Last Name: 
+         <input type="text" name="userLastName"/>
+       </label>
+       <button ng-click="createPerson()">Submit</button>
+	  </form>
+	<form ng-if="checked2" name = "formularioDog"  class="animate-if" ng-model = "formularioDog">
+	   <label>Dog Name:
+	   <input type="text" name="dogName"/>
+	 </label>
+	 <label>Pedigree: 
+	   <input type="text" name="pedigree"/>
+	   </label>
+	   <button ng-click="createDog()">Submit</button>
+	</form>
+	<ul>
+		<li ng-repeat="item in list">{{item}}</li>
+	</ul>
+    </div> 
+  </div> 
+</div>

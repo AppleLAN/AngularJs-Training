@@ -1,32 +1,47 @@
 <div class="container">
-  <div class="row">
-    <div class="item col-md-6">
-        <h1>View3</h1>
-    </div>
-    <div class="item col-md-6">
-    <label>{{messagePersona}} <input type="checkbox" ng-model="checked1" ng-init="checked=false" /></label>
-    <label>{{messagePerro}} <input type="checkbox" ng-model="checked2" ng-init="checked=false" /></label>
-	<form ng-if="checked1" name = "formularioPersona" role = "form" class="animate-if" ng-model = "formularioPersona">
-       <label>Name:
-         <input type="text" name="userName"/>
-       </label>
-       <label>Last Name: 
-         <input type="text" name="userLastName"/>
-       </label>
-       <button ng-click="createPerson()">Submit</button>
-	  </form>
-	<form ng-if="checked2" name = "formularioDog"  class="animate-if" ng-model = "formularioDog">
-	   <label>Dog Name:
-	   <input type="text" name="dogName"/>
-	 </label>
-	 <label>Pedigree: 
-	   <input type="text" name="pedigree"/>
-	   </label>
-	   <button ng-click="createDog()">Submit</button>
-	</form>
-	<ul>
-		<li ng-repeat="item in list">{{item}}</li>
-	</ul>
-    </div> 
-  </div> 
+	<div class="row">
+		<div class="item col-md-6">
+			<h1>View3</h1>
+		</div>
+		<div class="item col-md-6">
+			<label>
+				{{messagePersona}} 
+				<input type="checkbox" ng-model="checked1" />
+			</label>
+			<label>
+				{{messagePerro}}
+				<input type="checkbox" ng-model="checked2" />
+			</label>
+			
+			<form ng-if="checked1" name="formularioPersona" role = "form" class="animate-if">
+				<label>
+					Name:
+					<input type="text" name="person.name" data-ng-model="person.name"/>
+				</label>
+				<label>
+					Last Name: 
+					<input type="text" name="person.lastName" data-ng-model="person.lastName"/>
+				</label>
+				<button ng-click="createPerson()">
+					Submit
+				</button>
+			</form>
+			
+			<form ng-if="checked2" name="formularioDog"  class="animate-if">
+				<label>
+					Dog Name:
+					<input type="text" name="animal.name" data-ng-model="animal.name"/>
+				</label>
+				<label>
+					Pedigree: 
+					<input type="text" name="animal.pedigree" data-ng-model="animal.pedigree"/>
+				</label>
+				<button ng-click="createDog()">Submit</button>
+			</form>
+			
+			<ul>
+				<li ng-repeat="item in list">{{ item.saludar() }}</li>
+			</ul>
+		</div> 
+	</div> 
 </div>

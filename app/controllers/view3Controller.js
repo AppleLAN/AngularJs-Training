@@ -1,8 +1,8 @@
 app.controller("view3Controller", ['$scope', function($scope) {
 	
 	/*	Initial Variables	*/
-	$scope.messagePersona = "persona";
-	$scope.messagePerro = "perro";
+	$scope.messagePersona = "Crear persona";
+	$scope.messagePerro = "Crear animal";
 	
 	/*	Create scope objects	*/
 	$scope.person = {
@@ -44,12 +44,25 @@ app.controller("view3Controller", ['$scope', function($scope) {
 		$scope.checked2 = false;
 	}
 	
+	$scope.myOrder = "nombre";
+	$scope.myReverse = false;
+	$scope.customOrder = function(param){
+		if(param == $scope.myOrder){
+			$scope.myReverse = !$scope.myReverse;
+		}
+		else{
+			$scope.myOrder = param;
+			$scope.myReverse = false;
+		}
+	}
+	
 	/*	Classes declarations	*/
 	/*	Class Persona	*/
 	var Persona = function(nombre, apellido) {
 		var self = this;
 		this.nombre = nombre;
 		this.apellido = apellido;
+		this.tipo = "persona";
 		
 		this.saludar = function(){
 			return "Hola, soy "+ self.nombre +" "+ self.apellido +".";
@@ -61,6 +74,7 @@ app.controller("view3Controller", ['$scope', function($scope) {
 		var self = this;
 		this.nombre = nombre;
 		this.pedigree = pedigree;
+		this.tipo = "animal";
 		
 		this.saludar = function(){
 			return "Woof, soy "+ self.nombre +", y soy un "+ self.pedigree +", woof.";

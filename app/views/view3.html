@@ -39,9 +39,20 @@
 				<button ng-click="createDog()">Submit</button>
 			</form>
 			
-			<ul>
-				<li ng-repeat="item in list">{{ item.saludar() }}</li>
-			</ul>
+			<table>
+				<tr>
+					<th ng-click="customOrder('nombre')">Nombre</th>
+					<th ng-click="customOrder('apellido')">Apellido</th>
+					<th ng-click="customOrder('pedigree')">Pedigree</th>
+					<th ng-click="customOrder('saludar')">Saludo</th>
+				</tr>
+				<tr ng-repeat="item in list | orderBy:myOrder:myReverse">
+					<td>{{item.nombre}}</td>
+					<td>{{item.apellido}}</td>
+					<td>{{item.pedigree}}</td>
+					<td>{{item.saludar()}}</td>
+				</tr>
+			</table>
 		</div> 
 	</div> 
 </div>

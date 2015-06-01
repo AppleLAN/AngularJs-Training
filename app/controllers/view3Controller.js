@@ -63,13 +63,12 @@ app.controller("view3Controller", ['$scope', function($scope) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.tipo = "persona";
+		var colorPersonal = color;
 		this.getColor = function(){
-			var colorPersonal= color;
 			return colorPersonal;
 		}
 		this.setColor = function(newColor){
-			var colorPersonal= newColor;
-			return colorPersonal;
+			colorPersonal= newColor;
 		}
 		this.saludar = function(){
 			return "Hola, soy "+ self.nombre +" "+ self.apellido +".";

@@ -19,7 +19,7 @@ app.controller("view3Controller", ['$scope', function($scope) {
 	/*	Methods declarations	*/
 	/*	Create new Person object	*/
 	$scope.createPerson = function(){
-		var newPerson = new Persona($scope.person.name, $scope.person.lastName);
+		var newPerson = new Persona($scope.person.name, $scope.person.lastName, $scope.person.color);
 		$scope.list.push(newPerson);
 		$scope.clearForm();
 	}
@@ -58,19 +58,19 @@ app.controller("view3Controller", ['$scope', function($scope) {
 	
 	/*	Classes declarations	*/
 	/*	Class Persona	*/
-	var Persona = function(nombre, apellido) {
+	var Persona = function(nombre, apellido, color) {
 		var self = this;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.tipo = "persona";
+		this.getColor = function(){
+			var colorPersonal= color;
+			return colorPersonal;
+		}
 		this.saludar = function(){
 			return "Hola, soy "+ self.nombre +" "+ self.apellido +".";
 		}
 	};
-	Persona.prototype.getColor = function(){
-		var colorPersonal= "rojo";
-		return colorPersonal;
-	}
 	/*	Class Dog	*/
 	var Dog = function(nombre, pedigree) {
 		var self = this;

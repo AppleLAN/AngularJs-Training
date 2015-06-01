@@ -3,17 +3,17 @@ app.controller("view3Controller", ['$scope', function($scope) {
 	/*	Initial Variables	*/
 	$scope.messagePersona = "Crear persona";
 	$scope.messagePerro = "Crear animal";
-	
+	var colorfavorito = "azul";
 	/*	Create scope objects	*/
 	$scope.person = {
 		"name": "",
-		"lastName": ""
+		"lastName": "",
+		"colorFake": colorfavorito
 	}
 	$scope.animal = {
 		"name": "",
 		"pedigree": ""
 	}
-	
 	$scope.list = new Array();
 	
 	/*	Methods declarations	*/
@@ -63,12 +63,14 @@ app.controller("view3Controller", ['$scope', function($scope) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.tipo = "persona";
-		
 		this.saludar = function(){
 			return "Hola, soy "+ self.nombre +" "+ self.apellido +".";
 		}
 	};
-	
+	Persona.prototype.getColor = function(){
+		var colorPersonal= "rojo";
+		return colorPersonal;
+	}
 	/*	Class Dog	*/
 	var Dog = function(nombre, pedigree) {
 		var self = this;

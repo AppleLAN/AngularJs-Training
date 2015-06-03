@@ -3,12 +3,14 @@
 body{
 	font:1.5em $font-stackLow;
 	background-color: $darkGrey;
-	background: url("img/bg2.jpg") no-repeat center center fixed; 
+	background: url("img/bg2.jpg") no-repeat center top fixed; 
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
 	color:$white;
+	margin:0;
+	padding:0;
 }
 h1{
 	margin-top:0px;
@@ -94,7 +96,7 @@ input{
   transition:0.5s linear all;
 
   position:absolute;
-  top:30;
+  top:1;
   left:0;
   right:0;
   height:600px;

@@ -2,63 +2,65 @@
 body {
   font: 1.5em "Cardo", Georgia, Times, serif;
   background-color: #424242;
-  background: url("img/bg2.jpg") no-repeat center center fixed;
+  background: url("img/bg2.jpg") no-repeat center top fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   color: white;
+  margin: 0;
+  padding: 0;
 }
 
-/* line 13, style.scss */
+/* line 15, style.scss */
 h1 {
   margin-top: 0px;
 }
 
-/* line 16, style.scss */
+/* line 18, style.scss */
 .navbar {
   background-color: #171717;
   background-color: rgba(33, 33, 33, 0.7);
 }
-/* line 19, style.scss */
+/* line 21, style.scss */
 .navbar .navbar-header a {
   font-size: 1.5em;
   color: white;
 }
-/* line 23, style.scss */
+/* line 25, style.scss */
 .navbar .navbar-header a:hover {
   color: #bdbdbd;
 }
-/* line 26, style.scss */
+/* line 28, style.scss */
 .navbar .navbar-header a:focus {
   color: #616161;
 }
 
-/* line 31, style.scss */
+/* line 33, style.scss */
 .navbar-default {
   font-size: 1.5em;
 }
-/* line 35, style.scss */
+/* line 37, style.scss */
 .navbar-default .navbar-nav li a {
   color: white;
 }
-/* line 38, style.scss */
+/* line 40, style.scss */
 .navbar-default .navbar-nav li a:hover {
   color: #bdbdbd;
 }
-/* line 41, style.scss */
+/* line 43, style.scss */
 .navbar-default .navbar-nav li a:focus {
   color: #616161;
 }
 
-/* line 47, style.scss */
+/* line 49, style.scss */
 .opacityBackground {
   background-color: #1a1a1a;
   background-color: rgba(33, 33, 33, 0.8);
   border: 1px solid #616161;
 }
 
-/* line 51, style.scss */
+/* line 53, style.scss */
 .form {
   font-size: 1.2em;
   letter-spacing: 1px;
@@ -66,7 +68,7 @@ h1 {
   background-color: transparent;
   padding: 1% 0px;
 }
-/* line 56, style.scss */
+/* line 58, style.scss */
 .form button {
   background-color: #616161;
   color: white;
@@ -74,77 +76,77 @@ h1 {
   font-weight: bold;
 }
 
-/* line 65, style.scss */
+/* line 67, style.scss */
 input {
   color: black;
 }
 
-/* line 68, style.scss */
+/* line 70, style.scss */
 .table {
   background-color: #1a1a1a;
   background-color: rgba(33, 33, 33, 0.8);
 }
-/* line 70, style.scss */
+/* line 72, style.scss */
 .table tr:hover {
   background-color: #424242;
 }
 
-/* line 76, style.scss */
+/* line 78, style.scss */
 .repeat-item.ng-enter,
 .repeat-item.ng-leave {
   -webkit-transition: 0.5s linear all;
   transition: 0.5s linear all;
 }
 
-/* line 82, style.scss */
+/* line 84, style.scss */
 .repeat-item.ng-enter,
 .repeat-item.ng-leave.ng-leave-active {
   opacity: 0;
 }
 
-/* line 86, style.scss */
+/* line 88, style.scss */
 .repeat-item.ng-leave,
 .repeat-item.ng-enter.ng-enter-active {
   opacity: 1;
 }
 
-/* line 89, style.scss */
+/* line 91, style.scss */
 .my-slide-container {
   position: relative;
 }
 
-/* line 92, style.scss */
+/* line 94, style.scss */
 .my-slide-animation.ng-enter, .my-slide-animation.ng-leave {
   -webkit-transition: 0.5s linear all;
   transition: 0.5s linear all;
   position: absolute;
-  top: 30;
+  top: 1;
   left: 0;
   right: 0;
   height: 600px;
 }
 
-/* line 103, style.scss */
+/* line 105, style.scss */
 .my-slide-animation.ng-enter {
   z-index: 100;
   left: 600px;
   opacity: 0;
 }
 
-/* line 108, style.scss */
+/* line 110, style.scss */
 .my-slide-animation.ng-enter.ng-enter-active {
   left: 0;
   opacity: 1;
 }
 
-/* line 113, style.scss */
+/* line 115, style.scss */
 .my-slide-animation.ng-leave {
   z-index: 101;
   left: 0;
   opacity: 1;
 }
 
-/* line 118, style.scss */
+/* line 120, style.scss */
 .my-slide-animation.ng-leave.ng-leave-active {
   left: -600px;
   opacity: 0;

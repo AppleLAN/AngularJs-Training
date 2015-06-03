@@ -1,6 +1,6 @@
 /* line 3, style.scss */
 body {
-  font: 2em "Cardo", Georgia, Times, serif;
+  font: 1.5em "Cardo", Georgia, Times, serif;
   background-color: #424242;
   background: url("img/bg2.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -22,43 +22,48 @@ h1 {
 }
 /* line 19, style.scss */
 .navbar .navbar-header a {
+  font-size: 1.5em;
   color: white;
 }
-/* line 22, style.scss */
+/* line 23, style.scss */
 .navbar .navbar-header a:hover {
   color: #bdbdbd;
 }
-/* line 25, style.scss */
+/* line 26, style.scss */
 .navbar .navbar-header a:focus {
   color: #616161;
 }
 
-/* line 33, style.scss */
+/* line 31, style.scss */
+.navbar-default {
+  font-size: 1.5em;
+}
+/* line 35, style.scss */
 .navbar-default .navbar-nav li a {
   color: white;
 }
-/* line 36, style.scss */
+/* line 38, style.scss */
 .navbar-default .navbar-nav li a:hover {
   color: #bdbdbd;
 }
-/* line 39, style.scss */
+/* line 41, style.scss */
 .navbar-default .navbar-nav li a:focus {
   color: #616161;
 }
 
-/* line 45, style.scss */
+/* line 47, style.scss */
 .opacityBackground {
   background-color: #1a1a1a;
   background-color: rgba(33, 33, 33, 0.8);
   border: 1px solid #616161;
 }
 
-/* line 49, style.scss */
+/* line 51, style.scss */
 .form {
   background-color: transparent;
-  margin: 1% 0px;
+  padding: 1% 0px;
 }
-/* line 51, style.scss */
+/* line 53, style.scss */
 .form button {
   background-color: #616161;
   color: white;
@@ -68,46 +73,46 @@ h1 {
   margin-right: 5%;
 }
 
-/* line 62, style.scss */
+/* line 64, style.scss */
 input {
   color: black;
 }
 
-/* line 65, style.scss */
+/* line 67, style.scss */
 .table {
   background-color: #1a1a1a;
   background-color: rgba(33, 33, 33, 0.8);
 }
-/* line 67, style.scss */
+/* line 69, style.scss */
 .table tr:hover {
   background-color: #424242;
 }
 
-/* line 73, style.scss */
+/* line 75, style.scss */
 .repeat-item.ng-enter,
 .repeat-item.ng-leave {
   -webkit-transition: 0.5s linear all;
   transition: 0.5s linear all;
 }
 
-/* line 79, style.scss */
+/* line 81, style.scss */
 .repeat-item.ng-enter,
 .repeat-item.ng-leave.ng-leave-active {
   opacity: 0;
 }
 
-/* line 83, style.scss */
+/* line 85, style.scss */
 .repeat-item.ng-leave,
 .repeat-item.ng-enter.ng-enter-active {
   opacity: 1;
 }
 
-/* line 86, style.scss */
+/* line 88, style.scss */
 .my-slide-container {
   position: relative;
 }
 
-/* line 89, style.scss */
+/* line 91, style.scss */
 .my-slide-animation.ng-enter, .my-slide-animation.ng-leave {
   -webkit-transition: 0.5s linear all;
   transition: 0.5s linear all;
@@ -118,27 +123,27 @@ input {
   height: 600px;
 }
 
-/* line 100, style.scss */
+/* line 102, style.scss */
 .my-slide-animation.ng-enter {
   z-index: 100;
   left: 600px;
   opacity: 0;
 }
 
-/* line 105, style.scss */
+/* line 107, style.scss */
 .my-slide-animation.ng-enter.ng-enter-active {
   left: 0;
   opacity: 1;
 }
 
-/* line 110, style.scss */
+/* line 112, style.scss */
 .my-slide-animation.ng-leave {
   z-index: 101;
   left: 0;
   opacity: 1;
 }
 
-/* line 115, style.scss */
+/* line 117, style.scss */
 .my-slide-animation.ng-leave.ng-leave-active {
   left: -600px;
   opacity: 0;

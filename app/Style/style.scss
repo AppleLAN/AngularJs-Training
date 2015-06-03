@@ -1,7 +1,7 @@
 @import 'variables';
 
 body{
-	font:2em $font-stackLow;
+	font:1.5em $font-stackLow;
 	background-color: $darkGrey;
 	background: url("img/bg2.jpg") no-repeat center center fixed; 
   	-webkit-background-size: cover;
@@ -17,6 +17,7 @@ h1{
 	@include alpha-background-color(rgba($darkestGrey, 0.7), black);
 	.navbar-header{
 		a{
+			font-size: 1.5em;
 			color:$white;
 		}
 		a:hover{
@@ -28,6 +29,7 @@ h1{
 	}
 }
 .navbar-default{
+	font-size: 1.5em;
 	.navbar-nav{
 		li{
 			a{
@@ -57,7 +59,7 @@ h1{
 		margin-right: 5%;
 	}
 
-	margin: 1% 0px;
+	padding: 1% 0px;
 }
 input{
 	color: black;

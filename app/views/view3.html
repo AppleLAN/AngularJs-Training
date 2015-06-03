@@ -7,18 +7,19 @@
 			<div class="opacityBackground"  align="middle">
 				<form class = "form"  name="formularioGame" class="animate-if">
 					<div call="form-group">
-						<td><label>
-							Name:
-							<input my-directive = 'name' type="text" name="game.name" data-ng-model="game.name"/>
-						</label>
-						<label class='type_input'>
-							Type: 
-							<input my-directive = 'type' type="text" name="game.type" data-ng-model="game.type"/>
-						</label>
+						<td>
+							<label>
+								Name:
+								<input my-directive = 'name' type="text" name="game.name" data-ng-model="game.name"/>
+							</label>
+							<label class='type_input'>
+								Type: 
+								<input my-directive = 'type' type="text" name="game.type" data-ng-model="game.type"/>
+							</label>
 						</td>
 						<td>
-							<button class="btn btn-default" ng-click="createGame()">
-								Submit
+							<button type="submit" class="btn btn-default btn-block" ng-click="createGame()">
+								Click For Submission
 							</button>
 						</td>
 					</div>

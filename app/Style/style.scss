@@ -49,14 +49,15 @@ h1{
 	border: 1px solid $heavyGrey;
 }
 .form{
+	font-size: 1.2em;
+	letter-spacing: 1px;
+	font-weight: lighter;
 	background-color: transparent;
 	button{
 		background-color: $heavyGrey;
 		color: $white;
-		width: 18%;
-		line-height: 0.95em;
-		float: right;
-		margin-right: 5%;
+		font-size: 1em;
+		font-weight: bold;
 	}
 
 	padding: 1% 0px;

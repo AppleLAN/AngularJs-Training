@@ -60,59 +60,60 @@ h1 {
 
 /* line 51, style.scss */
 .form {
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  font-weight: lighter;
   background-color: transparent;
   padding: 1% 0px;
 }
-/* line 53, style.scss */
+/* line 56, style.scss */
 .form button {
   background-color: #616161;
   color: white;
-  width: 18%;
-  line-height: 0.95em;
-  float: right;
-  margin-right: 5%;
+  font-size: 1em;
+  font-weight: bold;
 }
 
-/* line 64, style.scss */
+/* line 65, style.scss */
 input {
   color: black;
 }
 
-/* line 67, style.scss */
+/* line 68, style.scss */
 .table {
   background-color: #1a1a1a;
   background-color: rgba(33, 33, 33, 0.8);
 }
-/* line 69, style.scss */
+/* line 70, style.scss */
 .table tr:hover {
   background-color: #424242;
 }
 
-/* line 75, style.scss */
+/* line 76, style.scss */
 .repeat-item.ng-enter,
 .repeat-item.ng-leave {
   -webkit-transition: 0.5s linear all;
   transition: 0.5s linear all;
 }
 
-/* line 81, style.scss */
+/* line 82, style.scss */
 .repeat-item.ng-enter,
 .repeat-item.ng-leave.ng-leave-active {
   opacity: 0;
 }
 
-/* line 85, style.scss */
+/* line 86, style.scss */
 .repeat-item.ng-leave,
 .repeat-item.ng-enter.ng-enter-active {
   opacity: 1;
 }
 
-/* line 88, style.scss */
+/* line 89, style.scss */
 .my-slide-container {
   position: relative;
 }
 
-/* line 91, style.scss */
+/* line 92, style.scss */
 .my-slide-animation.ng-enter, .my-slide-animation.ng-leave {
   -webkit-transition: 0.5s linear all;
   transition: 0.5s linear all;
@@ -123,27 +124,27 @@ input {
   height: 600px;
 }
 
-/* line 102, style.scss */
+/* line 103, style.scss */
 .my-slide-animation.ng-enter {
   z-index: 100;
   left: 600px;
   opacity: 0;
 }
 
-/* line 107, style.scss */
+/* line 108, style.scss */
 .my-slide-animation.ng-enter.ng-enter-active {
   left: 0;
   opacity: 1;
 }
 
-/* line 112, style.scss */
+/* line 113, style.scss */
 .my-slide-animation.ng-leave {
   z-index: 101;
   left: 0;
   opacity: 1;
 }
 
-/* line 117, style.scss */
+/* line 118, style.scss */
 .my-slide-animation.ng-leave.ng-leave-active {
   left: -600px;
   opacity: 0;

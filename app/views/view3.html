@@ -1,62 +1,35 @@
-<div class="container">
+<div class="container" align="middle">
 	<div class="row">
-		<div class="item col-md-6">
-			<h1>View3</h1>
+		<div class= "col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+			<div class="item">
+				<h1>Game Creation</h1>
+			</div>
+			<div class="opacityBackground"  align="middle">
+				<form class = "form"  name="formularioGame" class="animate-if">
+					<div call="form-group">
+						<td><label>
+							Name:
+							<input my-directive = 'name' type="text" name="game.name" data-ng-model="game.name"/>
+						</label>
+						<label class='type_input'>
+							Type: 
+							<input my-directive = 'type' type="text" name="game.type" data-ng-model="game.type"/>
+						</label>
+						</td>
+						<td>
+							<button class="btn btn-default" ng-click="createGame()">
+								Submit
+							</button>
+						</td>
+					</div>
+				</form>
+			</div>  
+			<table class="table table-bordered" >
+		        <tr ng-repeat="item in list | orderBy:'type'" class="repeat-item">
+		        	<td>{{item.name}}</td>
+		        	<td>{{item.type}}</td>
+		        </tr>
+		    </table>  
 		</div>
-		<div class="item col-md-6">
-			<label>
-				{{messagePersona}} 
-				<input type="checkbox" ng-model="checked1" />
-			</label>
-			<label>
-				{{messagePerro}}
-				<input type="checkbox" ng-model="checked2" />
-			</label>
-			
-			<form ng-if="checked1" name="formularioPersona" role = "form" class="animate-if">
-				<label>
-					Name:
-					<input type="text" name="person.name" data-ng-model="person.name"/>
-				</label>
-				<label>
-					Last Name: 
-					<input type="text" name="person.lastName" data-ng-model="person.lastName"/>
-				</label>
-				<label>
-					Personal Color: 
-					<input type="text" name="person.color" data-ng-model="person.color"/>
-				</label>
-				<button ng-click="createPerson()">
-					Submit
-				</button>
-			</form>
-			
-			<form ng-if="checked2" name="formularioDog"  class="animate-if">
-				<label>
-					Dog Name:
-					<input type="text" name="animal.name" data-ng-model="animal.name"/>
-				</label>
-				<label>
-					Pedigree: 
-					<input type="text" name="animal.pedigree" data-ng-model="animal.pedigree"/>
-				</label>
-				<button ng-click="createDog()">Submit</button>
-			</form>
-			
-			<table>
-				<tr>
-					<th ng-click="customOrder('nombre')">Nombre</th>
-					<th ng-click="customOrder('apellido')">Apellido</th>
-					<th ng-click="customOrder('pedigree')">Pedigree</th>
-					<th ng-click="customOrder('saludar')">Saludo</th>
-				</tr>
-				<tr ng-repeat="item in list | orderBy:myOrder:myReverse">
-					<td>{{item.nombre}}</td>
-					<td>{{item.apellido}}</td>
-					<td>{{item.pedigree}}</td>
-					<td>{{item.saludar()}}</td>
-				</tr>
-			</table>
-		</div> 
-	</div> 
+	</div>
 </div>

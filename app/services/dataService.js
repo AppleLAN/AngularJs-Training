@@ -1,18 +1,24 @@
-app.factory('peopleService', function($http) {
+app.factory('gameService', function($http) {
    var service = {};
-    service.getPeople = function(){
+    service.getGame = function(){
    		return $http({
    			method: 'GET',
    			url: 'api/data.json'
-   		});
+         });
    };
-   service.getPeopleOption = function(option){
-   		return $http({
-   			method: 'GET',
-   			url: 'api/'+ option +'.json'
-   		});
+   service.getGameNameType = function(){
+         return $http({
+            method: 'GET',
+            url: 'api/nametype.json'
+         });
    };
-   service.postPeople = function(people){
+   service.getGameOption = function(option){
+         return $http({
+            method: 'GET',
+            url: 'api/'+ option +'.json'
+         });
+   };
+   service.gamePeople = function(people){
    		return $http({
    			method: 'POST',
    			data: people,

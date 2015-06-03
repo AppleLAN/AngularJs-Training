@@ -1,0 +1,15 @@
+// Colors
+$white: #ffffff;
+$darkGrey: #424242;
+$darkestGrey: #212121;
+$heavyGrey: #616161;
+$lightGrey: #BDBDBD;
+$font-stack: 'Allan', Helvetica, Arial, sans-serif;
+$font-stackLow: 'Cardo', Georgia, Times, serif;
+@mixin alpha-background-color($color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  background-color: $solid-color;
+  background-color: $color;
+}

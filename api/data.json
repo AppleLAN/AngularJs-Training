@@ -1,10 +1,298 @@
-[	{
-		"name":"Alan",
-		"lastName":"Buscaglia"
-	}
-	,
+[
 	{
-		"name" :"jorge",
-		"lastName":"Wach"
+		"name":"Alien: Isolation",
+		"type":"Horror"
+	},
+	{
+		"name":"Crazy Taxi",
+		"type":"Arcade"
+	},
+	{
+		"name":"Heavy Rain",
+		"type":"Adventure"
+	},
+	{
+		"name":"Battlefield 3",
+		"type":"FPS"
+	},
+	{
+		"name":"Hitman: Blood Money",
+		"type":"Adventure"
+	},
+	{
+		"name":"Geometry Wars: Retro Evolved 2",
+		"type":"Arcade"
+	},
+	{
+		"name":"TimeSplitters 2",
+		"type":"FPS"
+	},
+	{
+		"name":"Dragon Quest 9: Sentinels of the Starry Skies",
+		"type":"MMO"
+	},
+	{
+		"name":"Unreal Tournament",
+		"type":"FPS"
+	},
+	{
+		"name":"The Sims 2",
+		"type":"FPS"
+	},
+	{
+		"name":"Team Fortress 2",
+		"type":"FPS"
+	},
+	{
+		"name":"Plants vs. Zombies",
+		"type":"Strategy"
+	},
+	{
+		"name":"Limbo",
+		"type":"Puzzle"
+	},
+	{
+		"name":"Star Wars: Knights of the Old Republic",
+		"type":"RPG"
+	},
+	{
+		"name":"Nidhogg",
+		"type":"Arcade"
+	},
+	{
+		"name":"Rock Band 3",
+		"type":"Music"
+	},
+	{
+		"name":"Hotline Miami",
+		"type":"Adventure"
+	},
+	{
+		"name":"Outrun 2006: Coast 2 Coast",
+		"type":"Racing"
+	},
+	{
+		"name":"Max Payne",
+		"type":"TPS"
+	},
+	{
+		"name":"Quake 3: Arena",
+		"type":"FPS"
+	},
+	{
+		"name":"Hearthstone",
+		"type":"Cards"
+	},
+	{
+		"name":"Tomb Raider",
+		"type":"Adventure"
+	},
+	{
+		"name":"Dragon Age: Inquisition",
+		"type":"RPG"
+	},
+	{
+		"name":"Super Monkey Ball",
+		"type":"Arcade"
+	},
+	{
+		"name":"Dead Space",
+		"type":"Horror"
+	},
+	{
+		"name":"Civilization 5",
+		"type":"Strategy"
+	},
+	{
+		"name":"EarthBound",
+		"type":"RPG"
+	},
+	{
+		"name":"Ikaruga",
+		"type":"Arcade"
+	},
+	{
+		"name":"Fable 2",
+		"type":"RPG"
+	},
+	{
+		"name":"Sonic the Hedgehog 2",
+		"type":"Platformer"
+	},
+	{
+		"name":"XCOM: Enemy Within",
+		"type":"Strategy"
+	},
+	{
+		"name":"Assassin's Creed 4: Black Flag",
+		"type":"Adventure"
+	},
+	{
+		"name":"Worms Armageddon",
+		"type":"Strategy"
+	},
+	{
+		"name":"Thief 2: The Metal Age",
+		"type":"Adventure"
+	},
+	{
+		"name":"To the Moon",
+		"type":"RPG"
+	},
+	{
+		"name":"SSX3",
+		"type":"Sports"
+	},
+	{
+		"name":"TowerFall Ascension",
+		"type":"Platformer"
+	},
+	{
+		"name":"F-Zero GX",
+		"type":"Racing"
+	},
+	{
+		"name":"Spelunky",
+		"type":"Platformer"
+	},
+	{
+		"name":"Brothers: A Tale of Two Sons",
+		"type":"Adventure"
+	},
+	{
+		"name":"Grim Fandango",
+		"type":"Graphic Adventure"
+	},
+	{
+		"name":"Tekken 3",
+		"type":"Fighting"
+	},
+	{
+		"name":"Banjo-Kazooie",
+		"type":"Platformer"
+	},
+	{
+		"name":"Guild Wars 2",
+		"type":"MMO"
+	},
+	{
+		"name":"Left 4 Dead",
+		"type":"FPS"
+	},
+	{
+		"name":"Phoenix Wright: Ace Attorney",
+		"type":"Puzzle"
+	},
+	{
+		"name":"Braid",
+		"type":"Platformer"
+	},
+	{
+		"name":"Persona 4 Golden",
+		"type":"RPG"
+	},
+	{
+		"name":"Day of the Tentacle",
+		"type":"Graphic Adventure"
+	},
+	{
+		"name":"Tony Hawk's Pro Skater 3",
+		"type":"Sports"
+	},
+	{
+		"name":"World of Warcraft",
+		"type":"MMO"
+	},
+	{
+		"name":"Ghost Trick",
+		"type":"Graphic Adventure"
+	},
+	{
+		"name":"Super Smash Bros. for Wii U",
+		"type":"Fighting"
+	},
+	{
+		"name":"Castlevania: Symphony of the Night",
+		"type":"Platformer"
+	},
+	{
+		"name":"Fire Emblem Awakening",
+		"type":"RPG"
+	},
+	{
+		"name":"Secret of Mana",
+		"type":"RPG"
+	},
+	{
+		"name":"The Secret of Monkey Island",
+		"type":"Graphic Adventure"
+	},
+	{
+		"name":"Destiny",
+		"type":"MMO"
+	},
+	{
+		"name":"FIFA 15",
+		"type":"Sports"
+	},
+	{
+		"name":"Super Mario World 2: Yoshi's Island",
+		"type":"Platformer"
+	},
+	{
+		"name":"Xenoblade Chronicles",
+		"type":"RPG"
+	},
+	{
+		"name":"Ico",
+		"type":"Adventure"
+	},
+	{
+		"name":"Animal Crossing: New Leaf",
+		"type":"Adventure"
+	},
+	{
+		"name":"Okami",
+		"type":"Adventure"
+	},
+	{
+		"name":"Fallout 3",
+		"type":"RPG"
+	},
+	{
+		"name":"Pokemon X and Y",
+		"type":"RPG"
+	},
+	{
+		"name":"Batman: Arkham Asylum",
+		"type":"Adventure"
+	},
+	{
+		"name":"The Walking Dead: Season One",
+		"type":"Graphic Adventure"
+	},
+	{
+		"name":"Chrono Trigger",
+		"type":"RPG"
+	},
+	{
+		"name":"Portal 2",
+		"type":"FPS"
+	},
+	{
+		"name":"Bayonetta",
+		"type":"Adventure"
+	},
+	{
+		"name":"Deus Ex",
+		"type":"FPS"
+	},
+	{
+		"name":"Super Metroid",
+		"type":"Platformer"
+	},
+	{
+		"name":"Ultra Street Fighter 4",
+		"type":"Fighting"
 	}
 ]

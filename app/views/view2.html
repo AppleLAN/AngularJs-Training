@@ -1,23 +1,26 @@
-<div class="container">
+<div class="container" align="middle">
   <div class="row">
-    <div class="item col-md-6">
-        <h1>View2</h1>
-    </div>
-    <div class="item col-md-6">
-         <form name="userForm">
-          <ul ng-repeat="person in people">
-            <li>{{person.name}}</li>
-            <li>{{person.lastName}}</li>
-            <label>Name:
-              <input my-directive = 'name' type="text" name="userName" ng-model="person.name"/>
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+      <div >
+          <h1>Game Selection</h1>
+      </div>
+      <div class="opacityBackground">
+          <form  class = "form" name="formularioGame" role = "form" class="animate-if">
+            <label>
+              Name or type:
+              <input my-directive type="text" name="game.input" data-ng-model="game.input"/>
             </label>
-            <label>Last Name: 
-              <input my-directive = 'lastname' type="text" name="userLastName" ng-model="person.lastName"/>
-            </label>
-          </ul>
-       </form>
-       <button ng-click="save()">
-          {{saveText}}
-       </button>
-       </div>  
-    </div>
+            <button class="btn btn-default" ng-click="createGame()">
+              Submit
+            </button>
+          </form>
+      </div> 
+      <table class="table table-bordered">
+        <tr ng-repeat="item in list | orderBy:'type'" class="repeat-item">
+          <td>{{item.name}}</td>
+          <td>{{item.type}}</td>
+        </tr>
+      </table> 
+    </div>    
+  </div>
+</div>

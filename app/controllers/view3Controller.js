@@ -1,50 +1,38 @@
-app.controller("view3Controller", ['$scope', function($scope) {
+app.controller("view3Controller", ['$scope','gameService','gameFactory', function($scope, gameService, gameFactory) {
 	
-	/*	Initial Variables	*/
-	$scope.messagePersona = "Crear persona";
-	$scope.messagePerro = "Crear animal";
-	var colorfavorito = "azul";
+
 	/*	Create scope objects	*/
-	$scope.person = {
+	$scope.game = {
 		"name": "",
-		"lastName": "",
-		"colorFake": colorfavorito
+		"type": "",
 	}
-	$scope.animal = {
-		"name": "",
-		"pedigree": ""
+	var gameList = gameFactory.getGameList();
+	if(typeof gameList != "undefined" && gameList != null && gameList.length > 0){
+		$scope.list = gameList;
 	}
-	$scope.list = new Array();
+	else{
+		gameService.getGame().success(function(response){
+				gameFactory.startList(response);
+				$scope.list = gameFactory.getGameList();
+		});
+	}
 	
 	/*	Methods declarations	*/
 	/*	Create new Person object	*/
-	$scope.createPerson = function(){
-		var newPerson = new Persona($scope.person.name, $scope.person.lastName, $scope.person.color);
-		$scope.list.push(newPerson);
-		$scope.clearForm();
-	}
-	
-	/*	Create new Animal object	*/
-	$scope.createDog = function(){
-		var newDog = new Dog($scope.animal.name, $scope.animal.pedigree);
-		$scope.list.push(newDog);
+	$scope.createGame = function(){
+		var newGame = new Game($scope.game.name, $scope.game.type);
+		gameFactory.addGameToList(newGame);
 		$scope.clearForm();
 	}
 	
 	$scope.clearForm = function(){
-		$scope.person = {
+		$scope.game = {
 			"name": "",
-			"lastName": ""
+			"type": ""
 		}
-		$scope.animal = {
-			"name": "",
-			"pedigree": ""
-		}
-		$scope.checked1 = false;
-		$scope.checked2 = false;
 	}
 	
-	$scope.myOrder = "nombre";
+	$scope.myOrder = "name";
 	$scope.myReverse = false;
 	$scope.customOrder = function(param){
 		if(param == $scope.myOrder){
@@ -58,31 +46,9 @@ app.controller("view3Controller", ['$scope', function($scope) {
 	
 	/*	Classes declarations	*/
 	/*	Class Persona	*/
-	var Persona = function(nombre, apellido, color) {
+	var Game = function(name, type) {
 		var self = this;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.tipo = "persona";
-		var colorPersonal = color;
-		this.getColor = function(){
-			return colorPersonal;
-		}
-		this.setColor = function(newColor){
-			colorPersonal= newColor;
-		}
-		this.saludar = function(){
-			return "Hola, soy "+ self.nombre +" "+ self.apellido +".";
-		}
-	};
-	/*	Class Dog	*/
-	var Dog = function(nombre, pedigree) {
-		var self = this;
-		this.nombre = nombre;
-		this.pedigree = pedigree;
-		this.tipo = "animal";
-		
-		this.saludar = function(){
-			return "Woof, soy "+ self.nombre +", y soy un "+ self.pedigree +", woof.";
-		}
+		this.name = name;
+		this.type = type;
 	};
 }]);

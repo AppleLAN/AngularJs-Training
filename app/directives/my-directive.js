@@ -1,4 +1,4 @@
-app.directive('myDirective' ,['peopleService', function( peopleService)  {
+app.directive('myDirective' ,['gameService', function( gameService)  {
   return {
     restrict: 'A',
     require: 'ngModel',
@@ -6,25 +6,32 @@ app.directive('myDirective' ,['peopleService', function( peopleService)  {
       myDirective: '&',
     },
     link: function (scope, element, attrs, ngModel) {
-    	console.log("Hola");
 		var timing;
+		var responseAux;
 		$(element).on('keyup', function(){
 			clearTimeout(timing);
 			timing = setTimeout(function(){
 				var dataJs;
 				var option = attrs.myDirective;
-				peopleService.getPeopleOption(option).success(function(response){
-					dataJsName = response;
-					console.log($(element).val())
-					scope.$parent.directiveValue = $(element).val()
-					$(element).autocomplete({
-     					'source': dataJsName,
-     					select: function( event, ui ) {
-                            ngModel.$setViewValue(ui.item.value);
-     					}
-    				})
-
-				});
+				if(typeof option != "undefined" && option != null && option.length > 0){
+					gameService.getGameOption(option).success(function(response){
+						responseAux = response;
+					});
+				}
+				else{
+					gameService.getGameNameType().success(function(response){
+						responseAux = response;
+					});
+				}
+				dataJsName = responseAux;
+				console.log(dataJsName + "aca");
+				scope.$parent.directiveValue = $(element).val()
+				$(element).autocomplete({
+ 					'source': dataJsName,
+ 					select: function( event, ui ) {
+                        ngModel.$setViewValue(ui.item.value);
+ 					}
+				})
 			}, 500);
 		});
     }

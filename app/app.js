@@ -1,4 +1,4 @@
-var app = angular.module('Angular_Practice', ['ngRoute']);
+var app = angular.module('Angular_Practice', ['ngRoute','ngAnimate']);
 app.config(function($routeProvider) {
     $routeProvider
         .when('/', {

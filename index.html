@@ -2,34 +2,40 @@
 
 <html ng-app = "Angular_Practice">
 	<head>
-		<title>My angular First App</title>
+		<title>Best Games</title>
     	<link href="http://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
 	</head>
+    <body>
         <header>
             <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/">My Angular First App</a>
+                    <a class="navbar-brand" href="#/">Best Games</a>
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#/"> view1</a></li>
-                    <li><a href="#/view2"> view2</a></li>
-                    <li><a href="#/view3"> view3</a></li>
+                    <li><a href="#/"> Game Table</a></li>
+                    <li><a href="#/view2"> Game Selection</a></li>
+                    <li><a href="#/view3"> Game Creation</a></li>
                 </ul>
             </div>
             </nav>
         </header>
 
 		<div id="main">
-          <div ng-view></div>
+          <div ng-view class="my-slide-animation"></div>
     	</div>
     	<script src="js/angular.min.js"></script>
+        <script src="js/angular-animate.min.js"></script>
     	<script src="js/angular-route.min.js"></script>
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery-ui.min.js"></script>
 
         <link rel="stylesheet" type="text/css" href="js/jquery-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="app/Style/style.css">
+        <link rel="stylesheet" type="text/css" href="app/Style/variables.css">
+        <link href="http://fonts.googleapis.com/css?family=Allan:bold" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
 
     	<script src="app/app.js"></script>
 
@@ -41,6 +47,6 @@
 
         
         <script src="app/services/dataService.js"></script>
-
+        <script src="app/factorys/gameFactory.js"></script>
 	</body>
 </html>

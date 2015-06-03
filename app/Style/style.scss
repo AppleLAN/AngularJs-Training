@@ -1,0 +1,118 @@
+@import 'variables';
+
+body{
+	font:2em $font-stackLow;
+	background-color: $darkGrey;
+	background: url("img/bg2.jpg") no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+	color:$white;
+}
+h1{
+	margin-top:0px;
+}
+.navbar{
+	@include alpha-background-color(rgba($darkestGrey, 0.7), black);
+	.navbar-header{
+		a{
+			color:$white;
+		}
+		a:hover{
+				color:$lightGrey;
+		}
+		a:focus{
+			color:$heavyGrey;
+		}
+	}
+}
+.navbar-default{
+	.navbar-nav{
+		li{
+			a{
+				color:$white;
+			}
+			a:hover{
+				color:$lightGrey;
+			}
+			a:focus{
+				color:$heavyGrey;
+			}
+		}
+	}
+}
+.opacityBackground{
+	@include alpha-background-color(rgba($darkestGrey, 0.8), black);
+	border: 1px solid $heavyGrey;
+}
+.form{
+	background-color: transparent;
+	button{
+		background-color: $heavyGrey;
+		color: $white;
+		width: 18%;
+		line-height: 0.95em;
+		float: right;
+		margin-right: 5%;
+	}
+
+	margin: 1% 0px;
+}
+input{
+	color: black;
+}
+.table{
+	@include alpha-background-color(rgba($darkestGrey, 0.8), black);
+	tr:hover{
+		background-color: $darkGrey;		
+	}
+}
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+}
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave.ng-leave-active {
+  opacity:0;
+}
+.repeat-item.ng-leave,
+.repeat-item.ng-enter.ng-enter-active {
+  opacity:1;
+}
+.my-slide-container {
+  position:relative;
+}
+.my-slide-animation.ng-enter, .my-slide-animation.ng-leave {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+
+  position:absolute;
+  top:30;
+  left:0;
+  right:0;
+  height:600px;
+}
+
+.my-slide-animation.ng-enter {
+  z-index:100;
+  left:600px;
+  opacity:0;
+}
+.my-slide-animation.ng-enter.ng-enter-active {
+  left:0;
+  opacity:1;
+}
+
+.my-slide-animation.ng-leave {
+  z-index:101;
+  left:0;
+  opacity:1;
+}
+.my-slide-animation.ng-leave.ng-leave-active {
+  left:-600px;
+  opacity:0;
+}

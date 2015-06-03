@@ -1,0 +1,145 @@
+/* line 3, style.scss */
+body {
+  font: 2em "Cardo", Georgia, Times, serif;
+  background-color: #424242;
+  background: url("img/bg2.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+}
+
+/* line 13, style.scss */
+h1 {
+  margin-top: 0px;
+}
+
+/* line 16, style.scss */
+.navbar {
+  background-color: #171717;
+  background-color: rgba(33, 33, 33, 0.7);
+}
+/* line 19, style.scss */
+.navbar .navbar-header a {
+  color: white;
+}
+/* line 22, style.scss */
+.navbar .navbar-header a:hover {
+  color: #bdbdbd;
+}
+/* line 25, style.scss */
+.navbar .navbar-header a:focus {
+  color: #616161;
+}
+
+/* line 33, style.scss */
+.navbar-default .navbar-nav li a {
+  color: white;
+}
+/* line 36, style.scss */
+.navbar-default .navbar-nav li a:hover {
+  color: #bdbdbd;
+}
+/* line 39, style.scss */
+.navbar-default .navbar-nav li a:focus {
+  color: #616161;
+}
+
+/* line 45, style.scss */
+.opacityBackground {
+  background-color: #1a1a1a;
+  background-color: rgba(33, 33, 33, 0.8);
+  border: 1px solid #616161;
+}
+
+/* line 49, style.scss */
+.form {
+  background-color: transparent;
+  margin: 1% 0px;
+}
+/* line 51, style.scss */
+.form button {
+  background-color: #616161;
+  color: white;
+  width: 18%;
+  line-height: 0.95em;
+  float: right;
+  margin-right: 5%;
+}
+
+/* line 62, style.scss */
+input {
+  color: black;
+}
+
+/* line 65, style.scss */
+.table {
+  background-color: #1a1a1a;
+  background-color: rgba(33, 33, 33, 0.8);
+}
+/* line 67, style.scss */
+.table tr:hover {
+  background-color: #424242;
+}
+
+/* line 73, style.scss */
+.repeat-item.ng-enter,
+.repeat-item.ng-leave {
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+/* line 79, style.scss */
+.repeat-item.ng-enter,
+.repeat-item.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+/* line 83, style.scss */
+.repeat-item.ng-leave,
+.repeat-item.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+/* line 86, style.scss */
+.my-slide-container {
+  position: relative;
+}
+
+/* line 89, style.scss */
+.my-slide-animation.ng-enter, .my-slide-animation.ng-leave {
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+  position: absolute;
+  top: 30;
+  left: 0;
+  right: 0;
+  height: 600px;
+}
+
+/* line 100, style.scss */
+.my-slide-animation.ng-enter {
+  z-index: 100;
+  left: 600px;
+  opacity: 0;
+}
+
+/* line 105, style.scss */
+.my-slide-animation.ng-enter.ng-enter-active {
+  left: 0;
+  opacity: 1;
+}
+
+/* line 110, style.scss */
+.my-slide-animation.ng-leave {
+  z-index: 101;
+  left: 0;
+  opacity: 1;
+}
+
+/* line 115, style.scss */
+.my-slide-animation.ng-leave.ng-leave-active {
+  left: -600px;
+  opacity: 0;
+}

@@ -1,27 +1,30 @@
 app.controller("view3Controller", ['$scope','gameService','gameFactory', function($scope, gameService, gameFactory) {
 	
 
-	/*	Create scope objects	*/
 	$scope.game = {
 		"name": "",
 		"type": "",
 	}
 	var gameList = gameFactory.getGameList();
-	if(typeof gameList != "undefined" && gameList != null && gameList.length > 0){
+	if(gameFactory.checkList(gameFactory.getGameList())){
 		$scope.list = gameList;
 	}
 	else{
 		gameService.getGame().success(function(response){
 				gameFactory.startList(response);
 				$scope.list = gameFactory.getGameList();
+				gameList = $scope.list;
 		});
 	}
-	
-	/*	Methods declarations	*/
-	/*	Create new Person object	*/
 	$scope.createGame = function(){
 		var newGame = new Game($scope.game.name, $scope.game.type);
-		gameFactory.addGameToList(newGame);
+		if(!gameFactory.isGameThere(newGame,gameList))
+		{
+			gameFactory.addGameToList(newGame);
+		}
+		else{
+			alert("Is in There!!");
+		}
 		$scope.clearForm();
 	}
 	

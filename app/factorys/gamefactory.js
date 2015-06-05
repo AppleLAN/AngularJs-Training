@@ -1,5 +1,5 @@
 app.factory('gameFactory', function() {
-   var factory = {};
+  var factory = {};
     
   factory.gameList = new Array();
   factory.userGameList = new Array();
@@ -25,6 +25,35 @@ app.factory('gameFactory', function() {
     else{
      return false;
     };
+  }
+  factory.isGameThereUSer = function(value,list){
+      var isThere=false;
+      var i=0;
+          while(i<list.length && isThere==false)
+          {
+            var j=0;
+              while(j<value.length && isThere==false)
+              {
+          if(value[j].name.toUpperCase()==list[i].name.toUpperCase()){
+                    isThere=true;
+                }
+                j++;
+              }
+              i++;
+          }  
+      return isThere;
+  }
+  factory.isGameThere = function(value,list){
+      var isThere=false;
+      var i=0;
+          while(i<list.length && isThere==false)
+          {
+            if(value.name.toUpperCase()==list[i].name.toUpperCase()){
+              isThere=true;
+            }
+            i++;
+          }  
+      return isThere;
   }
    return factory;
 });

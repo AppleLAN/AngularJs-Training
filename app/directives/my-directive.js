@@ -1,39 +1,40 @@
-app.directive('myDirective' ,['gameService', function( gameService)  {
+app.directive('myDirective' ,['gameService','gameFactory', function( gameService,gameFactory)  {
   return {
     restrict: 'A',
     require: 'ngModel',
-    scope: {
+    scope: 
+    {
       myDirective: '&',
     },
     link: function (scope, element, attrs, ngModel) {
-		var timing;
-		var responseAux;
+		var dataJs;
+		var option = attrs.myDirective;
+		if(gameFactory.checkList(option))
+		{
+			gameService.getGameOption(option).success(function(response)
+			{
+				dataJs = response;
+			});
+		}
+		else
+		{
+			gameService.getGameNameType().success(function(response)
+			{
+				dataJs = response;
+			});
+		}
 		$(element).on('keyup', function(){
-			clearTimeout(timing);
-			timing = setTimeout(function(){
-				var dataJs;
-				var option = attrs.myDirective;
-				if(typeof option != "undefined" && option != null && option.length > 0){
-					gameService.getGameOption(option).success(function(response){
-						responseAux = response;
-					});
-				}
-				else{
-					gameService.getGameNameType().success(function(response){
-						responseAux = response;
-					});
-				}
-				dataJsName = responseAux;
-				console.log(dataJsName + "aca");
-				scope.$parent.directiveValue = $(element).val()
-				$(element).autocomplete({
- 					'source': dataJsName,
- 					select: function( event, ui ) {
-                        ngModel.$setViewValue(ui.item.value);
- 					}
-				})
-			}, 500);
+			$(element).autocomplete({
+				source:dataJs,
+				delay: 1000,
+				change: function(event, ui){
+					console.log(ui.item);
+				},
+				select: function( event, ui ) {
+	                ngModel.$setViewValue(ui.item.value);
+	 			}
+			});
 		});
-    }
+  	}
   };
 }]);

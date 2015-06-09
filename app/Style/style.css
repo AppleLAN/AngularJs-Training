@@ -8,8 +8,6 @@ body {
   -o-background-size: cover;
   background-size: cover;
   color: white;
-  margin: 0;
-  padding: 0;
 }
 
 /* line 15, style.scss */
@@ -59,7 +57,11 @@ h1 {
   background-color: rgba(33, 33, 33, 0.8);
   border: 1px solid #616161;
 }
-
+.selected {
+    background-color:white;
+    color:black;
+    font-weight:bold;
+}
 /* line 53, style.scss */
 .form {
   font-size: 1.2em;
@@ -120,7 +122,7 @@ input {
   -webkit-transition: 0.5s linear all;
   transition: 0.5s linear all;
   position: absolute;
-  top: 1;
+  top: 0;
   left: 0;
   right: 0;
   height: 600px;
@@ -129,25 +131,25 @@ input {
 /* line 105, style.scss */
 .my-slide-animation.ng-enter {
   z-index: 100;
-  left: 600px;
+  top: 600px;
   opacity: 0;
 }
 
 /* line 110, style.scss */
 .my-slide-animation.ng-enter.ng-enter-active {
-  left: 0;
-  opacity: 1;
+  top: 0;
+  opacity: 0.5;
 }
 
 /* line 115, style.scss */
 .my-slide-animation.ng-leave {
   z-index: 101;
-  left: 0;
-  opacity: 1;
+  top: 0;
+  opacity: 0.2;
 }
 
 /* line 120, style.scss */
 .my-slide-animation.ng-leave.ng-leave-active {
-  left: -600px;
+  top: -600px;
   opacity: 0;
 }

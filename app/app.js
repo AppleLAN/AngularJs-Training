@@ -1,4 +1,4 @@
-var app = angular.module('Angular_Practice', ['ngRoute','ngAnimate']);
+var app = angular.module('Angular_Practice', ['ngRoute','ngAnimate','smart-table']);
 app.config(function($routeProvider) {
     $routeProvider
         .when('/', {

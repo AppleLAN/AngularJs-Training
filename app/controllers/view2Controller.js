@@ -1,8 +1,9 @@
 app.controller("view2Controller", ['$scope','gameService','gameFactory', function($scope, gameService, gameFactory) {   
-  	var allGameList = gameFactory.getGameList();
+    $scope.rowCollection;
+    var allGameList = gameFactory.getGameList();
   	var gameList = gameFactory.getUserList();
   	if(gameFactory.checkList(gameList)){
-		$scope.list = gameFactory.getUserList();
+		$scope.rowCollection = gameFactory.getUserList();
 	}
 	else
 	{
@@ -10,56 +11,39 @@ app.controller("view2Controller", ['$scope','gameService','gameFactory', functio
 			gameService.getGame().success(function(response){
 					gameFactory.startList(response);
 					allGameList = gameFactory.getGameList();
-					$scope.list = gameFactory.getGameList();
+					$scope.rowCollection = gameFactory.getGameList();
 			});
 		}
 		else{
-			$scope.list = gameFactory.getGameList();
+			$scope.rowCollection = gameFactory.getGameList();
 		}
 	}
-	$scope.addGame = function(){
-		var auxList;
-		var isThere;
+	//copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
+    $scope.displayedCollection = [].concat($scope.rowCollection);
+	$scope.addGame = function(row){
 		var userList = gameFactory.getUserList();
-		auxList = getGameSelection($scope.game.input,allGameList);
-		console.log(auxList);
-		if(gameFactory.checkList(auxList)){
-			if(!gameFactory.isGameThereUSer(auxList,userList))
-			{
-				for( var x in auxList){
-					gameFactory.addUserGameToList(auxList[x]);
-				}
-			}
-			else{
-				alert("Is in There!!");
-			}
+		if(!gameFactory.isGameThereUSer(row,userList))
+		{
+			gameFactory.addUserGameToList(row);
 		}
 		else{
-			alert("Game not Found");
+			alert("Is in There!!");
 		}
-		
-		$scope.clearForm();
-		$scope.list = gameFactory.getUserList();
+		$scope.rowCollection = gameFactory.getUserList();
 	}
-	$scope.clearForm = function(){
-		$scope.game = {
-			"name": "",
-			"type": ""
-		}
-	}
-	var getGameSelection = function(value,list){
-    	var auxList = new Array();
-        	for(var i = 0 in list){
-            	if(value.toUpperCase()==list[i].name.toUpperCase() || value==list[i].type.toUpperCase()){
-              		auxList.push(list[i]);
-            	}
-         	} 
-      return auxList;
+	$scope.getTable = function(){
+    	$scope.rowCollection = gameFactory.getGameList();
 	};
-	
-	var Game = function(name, type) {
-		var self = this;
-		this.name = name;
-		this.type = type;
+	$scope.getUserTable = function(){
+
+    	$scope.rowCollection = gameFactory.getUserList();
 	};
+    //remove to the real data holder
+    $scope.removeItem = function removeItem(row) {
+        var index = $scope.rowCollection.indexOf(row);
+        if (index !== -1) {
+            $scope.rowCollection.splice(index, 1);
+        }
+    }
 }]);
+

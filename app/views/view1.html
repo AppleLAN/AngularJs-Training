@@ -4,11 +4,29 @@
       <div class="item col-md-12" align="middle">
           <h1>Game Table</h1>
       </div>
-      <table class="table table-bordered table-condensed">
-        <tr ng-repeat="item in list | orderBy:'type'" class="repeat-item">
-          <td>{{item.name}}</td>
-          <td>{{item.type}}</td>
-        </tr>
+      <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
+          </tr>
+          <tr>
+            <th st-sort="name">Name</th>
+            <th  st-sort="type">Type</th>
+            <th st-sort="name">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="row in displayedCollection">
+            <td>{{row.name}}</td>
+            <td>{{row.type}}</td>
+            <td>
+            <button type="button" ng-click="removeItem(row)" class="btn btn-sm btn-danger">
+              <i class="glyphicon glyphicon-remove-circle">
+              </i>
+            </button>
+            </td>
+          </tr>
+        </tbody>
       </table>  
     </div>
   </div>  

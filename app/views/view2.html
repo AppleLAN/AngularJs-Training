@@ -6,21 +6,44 @@
       </div>
       <div class="opacityBackground">
           <form  class = "form" name="formularioGame" role = "form" class="animate-if">
-            <label>
-              Name or type:
-              <input my-directive type="text" name="game.input" data-ng-model="game.input"/>
-            </label>
-            <button class="btn btn-default btn-block" ng-click="addGame()">
-              Click For Submission
+            <tr>
+            <button class="btn btn-default col-md-6" ng-click="getTable()">
+              Click For Table
             </button>
+            <button class="btn btn-default col-md-6" ng-click="getUserTable()">
+              Click For User List
+            </button>
+          </tr>
           </form>
       </div> 
-      <table class="table table-bordered">
-        <tr ng-repeat="item in list | orderBy:'type'" class="repeat-item">
-          <td>{{item.name}}</td>
-          <td>{{item.type}}</td>
-        </tr>
-      </table> 
+      <table st-table="displayedCollection" st-safe-src="rowCollection" class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="5"><input st-search="" class="form-control" placeholder="global search ..." type="text"/></th>
+          </tr>
+          <tr>
+            <th st-sort="name">Name</th>
+            <th  st-sort="type">Type</th>
+            <th st-sort="name">Delete/Save</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="row in displayedCollection">
+            <td>{{row.name}}</td>
+            <td>{{row.type}}</td>
+            <td>
+            <button type="button" ng-click="removeItem(row)" class="btn btn-sm btn-danger">
+              <i class="glyphicon glyphicon-remove-circle">
+              </i>
+            </button>
+            <button type="button" ng-click="addGame(row)" class="btn btn-sm btn-success">
+              <i class="glyphicon glyphicon-save">
+              </i>
+            </button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
     </div>    
   </div>
 </div>

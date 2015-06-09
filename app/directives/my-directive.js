@@ -1,40 +1,45 @@
 app.directive('myDirective' ,['gameService','gameFactory', function( gameService,gameFactory)  {
-  return {
-    restrict: 'A',
-    require: 'ngModel',
-    scope: 
-    {
-      myDirective: '&',
-    },
-    link: function (scope, element, attrs, ngModel) {
-		var dataJs;
-		var option = attrs.myDirective;
-		if(gameFactory.checkList(option))
+	return {
+		restrict: 'A',
+		require: 'ngModel',
+		scope: 
 		{
-			gameService.getGameOption(option).success(function(response)
+		  myDirective: '&',
+		},
+		link: function (scope, element, attrs, ngModel) {
+			var option = attrs.myDirective;
+			var urlAux;
+			if(gameFactory.checkList(option))
 			{
-				dataJs = response;
-			});
-		}
-		else
-		{
-			gameService.getGameNameType().success(function(response)
-			{
-				dataJs = response;
-			});
-		}
-		$(element).on('keyup', function(){
+				urlAux = 'api/'+ option +'.json'
+			}
+			else{
+				urlAux ='api/nametype.json'
+			}
 			$(element).autocomplete({
-				source:dataJs,
-				delay: 1000,
+				source:function(request, response){
+					$.ajax({
+						url: urlAux,
+						dataType: "json",
+						data: "searchterm=" + request.term,
+						success: function (data) {
+							response($.map(data, function (item) {
+								return {
+									label: item,
+									value: item
+								};
+							}));
+						}
+					});
+				},
+				delay: 500,
 				change: function(event, ui){
 					console.log(ui.item);
 				},
 				select: function( event, ui ) {
-	                ngModel.$setViewValue(ui.item.value);
+	        	     ngModel.$setViewValue(ui.item.value);
 	 			}
 			});
-		});
-  	}
-  };
+		}
+	}
 }]);

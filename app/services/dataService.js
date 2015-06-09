@@ -12,6 +12,12 @@ app.factory('gameService', function($http) {
             url: 'api/nametype.json'
          });
    };
+   service.getType = function(){
+         return $http({
+            method: 'GET',
+            url: 'api/type.json'
+         });
+   };
    service.getGameOption = function(option){
          return $http({
             method: 'GET',

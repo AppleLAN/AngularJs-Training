@@ -26,20 +26,29 @@ app.factory('gameFactory', function() {
      return false;
     };
   }
+  factory.getType = function(value,list){
+    var isThere=false;
+      var i=0;
+          while(i<list.length && isThere==false)
+          {
+
+          if(value.toUpperCase()==list[i].toUpperCase()){
+              isThere=true;
+          }
+          i++;
+          }  
+      return list[i-1];
+  }
   factory.isGameThereUSer = function(value,list){
       var isThere=false;
       var i=0;
           while(i<list.length && isThere==false)
           {
-            var j=0;
-              while(j<value.length && isThere==false)
-              {
-          if(value[j].name.toUpperCase()==list[i].name.toUpperCase()){
-                    isThere=true;
-                }
-                j++;
-              }
-              i++;
+
+          if(value.name.toUpperCase()==list[i].name.toUpperCase()){
+              isThere=true;
+          }
+          i++;
           }  
       return isThere;
   }
